@@ -1,0 +1,128 @@
+.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #3d3d3d;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 10px;
+
+}
+
+.nav li {
+    float: left;
+}
+
+.nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav li a:hover {
+    background-color: #111111;
+}
+
+#header {
+    background-color: #333333;
+    height: auto;
+    position: sticky;
+}
+
+#kayttaja {
+    position: relative;
+}
+
+.nappaimisto {
+    width: 5%;
+    height: 2.9vw;
+
+    box-shadow: 0.23vw 0.33vw 0.156vw 0.352vw rgba(0, 0, 0, 1);
+    background-color: rgba(107, 107, 107, 1);
+    border-radius: 0.391vw;
+
+    color: aliceblue;
+    text-align: start;
+    margin: 0.4vw;
+    font-size: 0.5vw;
+}
+
+.nappaimisto:hover {
+    background-color: rgb(85, 85, 85);
+    box-shadow: 0.234vw 0.332vw 0.156vw 0.352vw rgb(43, 43, 43);
+}
+
+#spacebar {
+    width: 16.9% !important;
+    text-align: center;
+
+}
+
+#enterbar {
+    width: 11% !important;
+}
+
+#kayttaja-background {
+    position: relative;
+    width: 100%;
+    text-align: center;
+
+    background: radial-gradient(at bottom right, #F9F9F9 0, #F9F9F9 25px, #F9F9F933 25px, #F9F9F933 50px, #F9F9F9BF 50px, #F9F9F9BF 75px, #F9F9F940 75px, #F9F9F940 100px, #F9F9F94D 100px, #F9F9F94D 125px, #F9F9F9BF 125px, #F9F9F9BF 150px, #F9F9F933 150px, #F9F9F933 175px, transparent 175px, transparent 200px), radial-gradient(at top left, transparent 0, transparent 25px, #F9F9F933 25px, #F9F9F933 50px, #F9F9F9BF 50px, #F9F9F9BF 75px, #F9F9F94D 75px, #F9F9F94D 100px, #F9F9F940 100px, #F9F9F940 125px, #F9F9F9BF 125px, #F9F9F9BF 150px, #F9F9F933 150px, #F9F9F933 175px, #F9F9F9 175px, #F9F9F9 200px, transparent 200px, transparent 500px);
+    background-blend-mode: multiply;
+    background-size: 200px 200px, 200px 200px;
+    background-color: #F5F5FF;
+
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    border-radius: 2vw;
+}
+
+.top-nap {
+    margin-bottom: 1.3vw !important;
+}
+
+#nimitys {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    width: min(90%, 320px);
+    padding: 1rem;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    background-color: rgba(245, 245, 245, 0.733);
+    border-radius: 1vw;
+    text-align: center;
+}
+
+#profiilikuva {
+    width: clamp(70px, 10vw, 120px);
+    height: clamp(70px, 10vw, 120px);
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+#nimitys h2,
+#nimitys p {
+    margin: 0.5rem 0 0;
+}
+
+#tyosto::after {
+    content: "|";
+    margin-left: 2px;
+    color: #222;
+    animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
