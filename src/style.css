@@ -1,3 +1,7 @@
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
 .nav {
     list-style-type: none;
     margin: 0;
@@ -30,6 +34,8 @@
     background-color: #333333;
     height: auto;
     position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 #kayttaja {
@@ -121,8 +127,101 @@
     animation: blink 0.7s step-end infinite;
 }
 
+#skills-of-me {
+    margin: auto;
+    background-color: rgb(77, 80, 99);
+    border-radius: 1vw;
+    padding: 1vw;
+    color: white;
+}
+
+.myProgress {
+    width: 100%;
+    background-color: grey;
+    border-radius: 1vw;
+}
+
+
+
+.myBar {
+
+    height: 30px;
+
+    border-radius: 1vw;
+}
+
+.Csharp {
+    background-color: green;
+    width: 30%;
+}
+
+.HTML {
+    background-color: rgb(0, 102, 0);
+    width: 80%;
+}
+
+.CSS {
+    background-color: rgb(0, 97, 153);
+    width: 90%;
+}
+
+.PHP {
+    background-color: rgb(110, 2, 160);
+    width: 70%;
+}
+
+.SQL {
+    background-color: rgb(141, 1, 1);
+    width: 60%;
+}
+
+.JavaScript {
+    background-color: rgb(212, 127, 0);
+    width: 40%;
+}
+
 @keyframes blink {
     50% {
         opacity: 0;
     }
+}
+
+
+
+#of-me {
+
+    margin: auto;
+    background-color: rgb(243, 223, 194);
+    border-radius: 1vw;
+    padding: 1vw;
+}
+
+
+@media (min-width: 1200px) {
+
+    #of-me,
+    #skills-of-me {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+
+        gap: 2.5vw;
+
+        width: 60%;
+
+
+    }
+
+
+
+    #of-me-text {
+        border-right: 2px solid rgba(145, 144, 144, 0.356);
+
+    }
+}
+
+#1,
+#2,
+#3 {
+    display: none;
+    color: #555555;
 }

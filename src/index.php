@@ -16,12 +16,13 @@ if($kuukausi < 11 | $paiva < 4){
         <title>
 
         </title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <?php include "header.php"; ?>
         <div id="ylos"></div>
-
+        <?php include "header.php"; ?>
         
+
         <div id="kayttaja">
             <div id="kayttaja-background">
                 <div id="nimitys">
@@ -56,30 +57,76 @@ if($kuukausi < 11 | $paiva < 4){
                     <br>
                     <p>Opintojeni myötä kiinnostukseni robotiikkaan on kasvanut. Olen rakentanut robottikämmenen tavaroiden poimimiseen ymmärtääkseni koneiden rakennusprosessin vaiheet, ja suunnittelen jo seuraavia projekteja, kuten bipedaaliorobotteja. Lisäksi olen osallistunut Taitaja 2027 -kilpailuihin näyttääkseni taitoni luotettavammim ja muita tapoja paremmin.</p>
                 </div>
-
+                
                 <div id="of-me-list">
-                    <p>Nimi: Samuel Onni Joonatan Parviainen</p>
+                    <h3>Basic info</h3>
                     <br>
-                    <p>Vahvuus: Matemaattinen taito</p>
-                    <br>
-                    <p>Sijainti: Kuopio, Finland</p>
-                    <br>
-                    <p>Github: <a href=""></a></p>
-                    <br>
-                    <p>Email: samuelparviainen2@gmail.com</p>
-                    <br>
-                    <p>Sivusto: <a href=""></a></p>
-                    <br>
-                    <p>Avoinna: Oikeiden sivujen tekemiseen, ja niiden monimutkaisuuteen</p>
-                    <br>
-                    <p>Ikä: <?php echo $ika; ?></p>
+                    
+                        <p><b>Nimi:</b> Samuel Onni Joonatan Parviainen</p>                
+                        <p><b>Vahvuus:</b> Matemaattinen taito</p>
+                        <p><b>Sijainti:</b> Kuopio, Finland</p>
+                        <p><b>Github:</b> <a href=""></a></p>
+                        <p><b>Email:</b> samuelparviainen2@gmail.com</p>
+                        <p><b>Sivusto:</b> <a href=""></a></p>
+                        <p><b>Avoinna:</b> Oikeiden sivujen tekemiseen, ja niiden monimutkaisuuteen</p>
+                        <p><b>Ikä:</b> <?php echo $ika; ?></p>
+
                 </div>
 
             </div>
-
+                <h1>Skills</h1>
             <div id="skills-of-me">
+            
+                <div>
+                    <p>C#</p>
+                    <div class="myProgress ">
+                        <div class="myBar Csharp"></div>
+                    </div>
+                    <p>HTML</p>
+                    <div class="myProgress ">
+                        <div class="myBar HTML"></div>
+                    </div>
+                    <p>CSS</p>
+                    <div class="myProgress ">
+                        <div class="myBar CSS"></div>
+                    </div>
+                    <p>PHP</p>
+                    <div class="myProgress ">
+                        <div class="myBar PHP"></div>
+                    </div>
+                    <p>SQL</p>
+                    <div class="myProgress ">
+                        <div class="myBar SQL"></div>
+                    </div>
+                    <p>JavaScript</p>
+                    <div class="myProgress ">
+                        <div class="myBar JavaScript"></div>
+                    </div>
+                </div>
 
+                <div>
+                    <h2>Simple programs:</h2>
+                    <br>
+                    <div class="slideshow-container">
 
+                        <div class="" id ="1">
+                            <p>1</p>
+                        </div>
+                        <div class="" id ="2">
+                            <p>2</p>
+                        </div>
+                        <div class="" id ="3">
+                            <p>3</p>
+                        </div>
+
+                        <div class="next">
+                            <button id="b1" onclick="slidecarousel(1)">●a</button>
+                            <button id="b2" onclick="slidecarousel(2)">●b</button>
+                            <button id="b3" onclick="slidecarousel(3)">●c</button>
+                        </div>
+                    </div>
+                    <script src="slide.js"></script>
+                </div>
             </div>
 
         </div>

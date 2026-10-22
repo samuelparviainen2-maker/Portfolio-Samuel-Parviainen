@@ -1,13 +1,4 @@
-<!Doctype html>
-<html>
-    <head>
-        <title>
-            Header portfoliolle
-        </title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div id="header">
+<div id="header">
         <ol class="nav">
 
             <div id="web-name">
@@ -24,7 +15,4 @@
             </div>
 
         </ol>
-        </div>
-
-    </body>
-</html>
+</div>
