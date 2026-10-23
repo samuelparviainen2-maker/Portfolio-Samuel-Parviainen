@@ -3,11 +3,15 @@ $vuosi = date("y");
 $kuukausi = date("m");
 $paiva = date("d");
                     
-$ika = $vuosi-8;
-if($kuukausi < 11 | $paiva < 4){
+$ika = $vuosi-8; 
+if($kuukausi < 11){
+    
+    $ika = $ika - 1;
+    
+}
+if($kuukausi == 11 && $paiva < 4){
     $ika = $ika - 1;
 }
-
 
 ?>
 <!Doctype html>
@@ -110,19 +114,19 @@ if($kuukausi < 11 | $paiva < 4){
                     <div class="slideshow-container">
 
                         <div class="" id ="1">
-                            <p>1</p>
+                            <?php include "program1.php"; ?>
                         </div>
                         <div class="" id ="2">
-                            <p>2</p>
+                            <?php include "program2.php" ?>
                         </div>
                         <div class="" id ="3">
                             <p>3</p>
                         </div>
 
                         <div class="next">
-                            <button id="b1" onclick="slidecarousel(1)">●a</button>
-                            <button id="b2" onclick="slidecarousel(2)">●b</button>
-                            <button id="b3" onclick="slidecarousel(3)">●c</button>
+                            <button id="b1" onclick="slidecarousel(1)">●</button>
+                            <button id="b2" onclick="slidecarousel(2)">●</button>
+                            <button id="b3" onclick="slidecarousel(3)">●</button>
                         </div>
                     </div>
                     <script src="slide.js"></script>

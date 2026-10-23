@@ -129,10 +129,16 @@ body {
 
 #skills-of-me {
     margin: auto;
-    background-color: rgb(77, 80, 99);
+    background-color: rgb(86, 89, 105);
     border-radius: 1vw;
     padding: 1vw;
     color: white;
+   
+}
+
+#skills-of-me > div:last-child {
+    display: flex;
+    flex-direction: column;
 }
 
 .myProgress {
@@ -151,22 +157,22 @@ body {
 }
 
 .Csharp {
-    background-color: green;
+    background-color: #170C3A;
     width: 30%;
 }
 
 .HTML {
-    background-color: rgb(0, 102, 0);
+    background-color: #E34F26;
     width: 80%;
 }
 
 .CSS {
-    background-color: rgb(0, 97, 153);
+    background-color: #1572B6;
     width: 90%;
 }
 
 .PHP {
-    background-color: rgb(110, 2, 160);
+    background-color: #4F5D95;
     width: 70%;
 }
 
@@ -176,7 +182,7 @@ body {
 }
 
 .JavaScript {
-    background-color: rgb(212, 127, 0);
+    background-color: #F7DF1E;
     width: 40%;
 }
 
@@ -219,9 +225,110 @@ body {
     }
 }
 
-#1,
-#2,
-#3 {
+
+[id="2"],
+[id="3"] {
     display: none;
-    color: #555555;
+}
+
+#b1, #b2, #b3{
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 2vw;
+    
+}
+
+#b2, #b3{
+    color: #b6b6b6;
+}
+
+#b1{
+    color: #ffffff;
+}
+
+.timeline > div{
+    background-color: #09008a;
+    border-radius: 0.3vw;
+    color: whitesmoke;
+    padding-left: 0.4vw;
+    padding-right: 0.5vw;
+    padding-top: 0.1vw;
+    padding-bottom: 0.1vw;
+    margin-bottom: 2vw;
+}
+
+.timeline{
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    height: 18vw;
+
+    scrollbar-color: red;
+}
+
+.timeline::-webkit-scrollbar {
+  display: none;
+}
+
+.saaData{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: min(100%, 17.5rem);
+    min-height: 15rem;
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 1rem;
+    
+    color: #333;
+    text-align: center;
+
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.36);
+
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0.4px);
+    
+}
+
+.saaData > img{
+    width: clamp(5.625rem, 10vw, 8.75rem);
+    height: clamp(5.625rem, 10vw, 8.75rem);
+    object-fit: contain;
+}
+
+.saaData h3,
+.saaData p {
+    margin: 0;
+}
+
+.saaData p {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+}
+
+.slideshow-container{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: min(100%, 20rem);
+    min-height: 18.75rem;
+    margin: 0 auto;
+}
+
+#city{
+margin-bottom: 0.125rem;
+}
+
+#temp{
+margin-top: -0.1875rem;
+}
+
+.next{
+    margin-top: auto;
+    text-align: center;
 }

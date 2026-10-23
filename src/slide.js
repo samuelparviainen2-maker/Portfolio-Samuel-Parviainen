@@ -19,11 +19,10 @@ function slidecarousel(button) {
 
     for (let i = 0; i < access_button.length; i++) {
         var vari = document.getElementById("b" + access_button[i]);
-        vari.style.color = "#555555"
+        vari.style.color = "#b6b6b6"
     }
-    if (y.style.color === "#555555") {
-        y.style.color = "#ff0000";
-    }
+        y.style.color = "#ffffff";
+    
 
 
 }
