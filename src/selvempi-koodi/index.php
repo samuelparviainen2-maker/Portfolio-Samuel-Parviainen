@@ -1,19 +1,3 @@
-<?php
-$vuosi = date("y");
-$kuukausi = date("m");
-$paiva = date("d");
-                    
-$ika = $vuosi-8; 
-if($kuukausi < 11){
-    
-    $ika = $ika - 1;
-    
-}
-if($kuukausi == 11 && $paiva < 4){
-    $ika = $ika - 1;
-}
-
-?>
 <!Doctype html>
 <html>
     <head>
@@ -76,7 +60,20 @@ if($kuukausi == 11 && $paiva < 4){
                         <p><b>Github:</b> <a href="https://github.com/samuelparviainen2-maker">samuelparviainen2</a></p>
                         <p><b>Email:</b> samuelparviainen2@gmail.com</p>
                         <p><b>Avoinna:</b> Sivustojen toimintaan</p>
-                        <p><b>Ikä:</b> <?php echo $ika; ?></p>
+                        <p><b>Ikä:</b> <span id="ika"></span></p>
+                        <script>
+                            const now = new Date();
+                            const vuosi = now.getFullYear() % 100;
+                            const kuukausi = now.getMonth() + 1;
+                            const paiva = now.getDate();
+
+                            let ika = vuosi - 8;
+                            if (kuukausi < 11 || (kuukausi === 11 && paiva < 4)) {
+                                ika -= 1;
+                            }
+
+                            document.getElementById("ika").textContent = ika;
+                        </script>
 
                 </div>
 
@@ -85,27 +82,27 @@ if($kuukausi == 11 && $paiva < 4){
             <div id="skills-of-me">
             
                 <div>
-                    <p>C#</p>
+                    <p>C#<b> 70%</b></p>
                     <div class="myProgress ">
                         <div class="myBar Csharp"></div>
                     </div>
-                    <p>HTML</p>
+                    <p>HTML<b> 70%</b></p>
                     <div class="myProgress ">
                         <div class="myBar HTML"></div>
                     </div>
-                    <p>CSS</p>
+                    <p>CSS<b> 70%</b></p>
                     <div class="myProgress ">
                         <div class="myBar CSS"></div>
                     </div>
-                    <p>PHP</p>
+                    <p>PHP <b> 75%</b></p>
                     <div class="myProgress ">
                         <div class="myBar PHP"></div>
                     </div>
-                    <p>SQL</p>
+                    <p>SQL <b> 65%</b></p>
                     <div class="myProgress ">
                         <div class="myBar SQL"></div>
                     </div>
-                    <p>JavaScript</p>
+                    <p>JavaScript<b> 50%</b></p>
                     <div class="myProgress ">
                         <div class="myBar JavaScript"></div>
                     </div>
@@ -154,6 +151,7 @@ if($kuukausi == 11 && $paiva < 4){
                 </form>
             </div>
         </div>
+        <br><br>
         <?php include "footer.php"; ?>
     </body>
 </html>

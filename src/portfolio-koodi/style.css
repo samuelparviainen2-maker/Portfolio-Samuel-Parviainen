@@ -1,60 +1,72 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     font-family: Helvetica, Arial, sans-serif;
 }
 
 p {
-    font-size: 0.7vw;
-}
+    font-size: 2.9vw;
+    }
 
 h1 {
-    font-size: 1.8vw;
+        font-size: 3.8vw;
 
-}
+    }
 
 h2 {
-    font-size: 1.1vw;
-}
+        font-size: 3.1vw;
+    }
 
 h3 {
-    font-size: 1.2vw;
-}
+        font-size: 4.2vw;
+    }
 
 .nav {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #3d3d3d;
-    padding: 10px;
-
+    background-color: #f15353;
+    padding: 0.3vw;
+    border-radius: 3vw;
+    
 }
 
-.nav-button>li>a {
-    font-size: 0.7vw
+.nav-button>li>a, #web-name>li>a {
+    font-size: 2.7vw;
 }
 
 .nav li {
     float: left;
 }
 
+.nav-button {
+    float: right;
+}
+
 .nav li a {
     display: block;
     color: white;
-    text-align: center;
+    
     padding: 0.5vw 0.5vw;
     text-decoration: none;
+    border-radius: 1vw;
 }
 
 .nav li a:hover {
-    background-color: #111111;
+    background-color: #ff1515;
 }
 
 #header {
-    background-color: #333333;
+    background: #F15353;
+    background: radial-gradient(ellipse farthest-corner at center center, #F15353 35%, #DD6D6D 100%);
     height: auto;
     position: sticky;
     top: 0;
     z-index: 10;
+    border-radius: 2vw;
 }
 
 #kayttaja {
@@ -67,7 +79,7 @@ h3 {
     justify-content: center;
     background-color: rgb(231, 229, 229);
     width: 100%;
-    height: 3vw;
+    height: 8vw;
 }
 
 .footer>h3 {
@@ -91,17 +103,26 @@ h3 {
 }
 
 .nappaimisto:hover {
-    background-color: rgb(85, 85, 85);
-    box-shadow: 0.234vw 0.332vw 0.156vw 0.352vw rgb(43, 43, 43);
+    background-color: #e9e9e9; /* Sininen korostusväri */
+  color: rgb(0, 0, 0);
+  transform: translateY(0.2vw); /* Pieni painautuma-efekti */
+  box-shadow: inset 0 0.2vw 0.4vw rgba(0,0,0,0.4);
 }
 
-#spacebar {
+.active {
+  background-color: #e9e9e9; /* Sininen korostusväri */
+  color: rgb(0, 0, 0);
+  transform: translateY(0.2vw); /* Pieni painautuma-efekti */
+  box-shadow: inset 0 0.2vw 0.4vw rgba(0,0,0,0.4);
+}
+
+#Space {
     width: 16.9% !important;
     text-align: center;
 
 }
 
-#enterbar {
+#Enter {
     width: 11% !important;
 }
 
@@ -184,7 +205,7 @@ h3 {
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
-    width: 13vw;
+    width: 35vw;
     padding: 1rem;
     transform: translate(-50%, -50%);
     pointer-events: none;
@@ -194,8 +215,8 @@ h3 {
 }
 
 #profiilikuva {
-    width: 5vw;
-    height: 5vw;
+    width: 20vw;
+    height: 20vw;
     object-fit: cover;
     border-radius: 100%;
 }
@@ -212,13 +233,23 @@ h3 {
     animation: blink 0.7s step-end infinite;
 }
 
+
+
+#of-me:hover{
+transform: scale(1.03);
+}
+
+#skills-of-me:hover {
+transform: scale(1.03);
+}
+
 #skills-of-me {
     margin: auto;
     background-color: rgb(96, 102, 138);
     border-radius: 1vw;
     padding: 1vw;
     color: white;
-
+    transition: all 0.3s ease;
 }
 
 #skills-of-me>div:last-child {
@@ -240,39 +271,39 @@ h3 {
 
 .myBar {
 
-    height: 30px;
+    height: 1.5vw;
 
     border-radius: 1vw;
 }
 
 .Csharp {
     background-color: #170C3A;
-    width: 30%;
+    width: 70%;
 }
 
 .HTML {
     background-color: #E34F26;
-    width: 80%;
+    width: 70%;
 }
 
 .CSS {
     background-color: #1572B6;
-    width: 90%;
+    width: 70%;
 }
 
 .PHP {
     background-color: #4F5D95;
-    width: 70%;
+    width: 75%;
 }
 
 .SQL {
     background-color: rgb(141, 1, 1);
-    width: 60%;
+    width: 65%;
 }
 
 .JavaScript {
     background-color: #F7DF1E;
-    width: 40%;
+    width: 50%;
 }
 
 @keyframes blink {
@@ -289,6 +320,7 @@ h3 {
     background-color: rgb(243, 223, 194);
     border-radius: 1vw;
     padding: 1vw;
+    transition: all 0.3s ease;
 }
 
 #of-me,
@@ -363,6 +395,72 @@ h3 {
     #b3 {
         font-size: 2vw !important;
     }
+
+    .contact-left>button{
+        font-size: 1vw !important;
+
+    }
+
+    .contact-left>input, .contact-left>textarea{
+        font-size: 1vw !important;
+    }
+
+    p {
+    font-size: 0.7vw;
+    }
+
+    h1 {
+        font-size: 1.8vw;
+
+    }
+
+    h2 {
+        font-size: 1.1vw;
+    }
+
+    h3 {
+        font-size: 1.2vw;
+    }
+
+    #profiilikuva {
+    width: 5vw;
+    height: 5vw;
+    }
+
+    #nimitys{
+        width: 13vw;
+    }
+
+    .nav-button>li>a, .web-name>li>a {
+    font-size: 0.7vw
+    }
+
+    .saaData p {
+    font-size: 1vw !important;
+    font-weight: 600;
+    }
+
+    #count {
+    font-size: 3vw !important;
+    }
+
+    .contact-left>button {
+    font-size: 1.3vw !important;
+    height: 3vw;
+    }
+
+    .footer{
+        height: 3vw;
+    }
+
+    .contact-left>input,
+    .contact-left>textarea {
+        font-size: 1.3vw;
+    }
+
+    .counter-buttons {
+        font-size: 1vw !important;
+    }
 }
 
 
@@ -404,7 +502,7 @@ h3 {
 .timeline {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    height: 18rem;
+    height: 18vw;
 
     scrollbar-color: red;
 }
@@ -449,7 +547,7 @@ h3 {
 }
 
 .saaData p {
-    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-size: 3vw;
     font-weight: 600;
 }
 
@@ -480,32 +578,33 @@ h3 {
 .contact-left>textarea {
     box-sizing: border-box;
     width: 100%;
-    padding: 0.75rem 1rem;
+    padding: 0.75vw 1vw;
     border: 1px solid #cbd5e1;
     background-color: #f8fafc;
-    border-radius: 0.75rem;
+    border-radius: 0.75vw;
     color: #1f2937;
     font: inherit;
-    margin-top: 2rem;
+    margin-top: 2vw;
+    font-size: 4vw;
 }
 
 .contact-left>input:focus,
 .contact-left>textarea:focus {
     border-color: #eb2525;
     outline: none;
-    box-shadow: 0 0 0 3px rgba(235, 37, 37, 0.18);
+    box-shadow: 0 0 0 0.15vw rgba(235, 37, 37, 0.18);
 }
 
 .contact-left>button {
-    border: 1px solid hsl(118, 95%, 86%);
+    border: 0.02vw solid hsl(118, 95%, 86%);
     background-color: #d0fabf;
-    border-radius: 0.45rem;
+    border-radius: 0.45vw;
     color: #1f2937;
     font: inherit;
-    margin-top: 2rem;
-    width: 30%;
-    height: 3rem;
-    font-size: 1.3rem;
+    margin-top: 2vw;
+    width: auto;
+    height: auto;
+    font-size: 5.3vw;
     margin-left: auto;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -532,7 +631,7 @@ h3 {
 }
 
 #count {
-    font-size: 3vw;
+    font-size: 8vw;
 }
 
 .counter {
@@ -548,9 +647,14 @@ h3 {
     height: 25%;
     border-radius: 0.5vw;
     margin-bottom: 1vw;
+    font-size: 3vw;
 }
 
 #form-contact {
     width: 80%;
     margin: auto;
+}
+
+textarea{
+    resize: vertical;
 }

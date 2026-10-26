@@ -3,7 +3,7 @@ const Qnum = 0;
 let palaute = "";
 let tuloste = "";
 const paragraph = document.getElementById("tyosto");
-const lastnum = -1;
+let lastnum = -1;
 
 function naytaSana() { //Aloitetaan funktio yläosan teksti animaatiolle
     let number = Math.floor(Math.random() * 7); //Valitaan funktiosta satunnainen teksti
@@ -25,12 +25,11 @@ function naytaSana() { //Aloitetaan funktio yläosan teksti animaatiolle
                 if (i === palaute_array.length - 1) { //ajastin koko funktion resetoinnille
                     setTimeout(naytaSana, 2000);
                 }
-            }, i * 200); //sanan tulostus hidastuu kirjaimien määrän perusteella
+            }, i * 300); //sanan tulostus hidastuu kirjaimien määrän perusteella
         }
-    } else {
-        number = Math.floor(Math.random() * 7); //Jos numero on sama kuin aiempi, niin se ottaa uuden numeron
-    }
-    lastnum = number;
+        lastnum = number;
+    } 
+    
 }
 naytaSana();
 
@@ -71,3 +70,20 @@ function quote(Qnum) { //sanat tekstin tulostukselle
     return palaute;
 
 }
+
+
+document.addEventListener('keydown', (event) => {
+  const button = document.getElementById(event.code);
+  if (button) {
+    
+    button.classList.add('active');
+  }
+});
+
+// Kun näppäin vapautetaan
+document.addEventListener('keyup', (event) => {
+  const button = document.getElementById(event.code);
+  if (button) {
+    button.classList.remove('active');
+  }
+});

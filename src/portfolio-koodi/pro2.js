@@ -1,73 +1,61 @@
-<?php
-$latitude = 62.8924;
-$longitude = 27.6770;
+const latitude = 62.8924;    
+const longitude = 27.6770;
 // Met.no API URL
-$url = "https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=$latitude&lon=$longitude";
+const url = `https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=${latitude}&lon=${longitude}`;
+async function haeSaa() {
+const response = await fetch(url);
 
-$options = [
-"http" => [
-"header" => "User-Agent: OmaSovellus/1.0 oma.samuelparviainen2@gmail.com\r\n"
-]
-];
-$context = stream_context_create($options);
-// Haetaan data
-$response = file_get_contents($url, false, $context);
-if ($response === FALSE) {
-    die("Säädatan haku epäonnistui.");
+if (!response.ok) {
+  throw new Error("Säädatan haku epäonnistui.");
 }
 // Muutetaan JSON taulukoksi
-$data = json_decode($response, true);
+const data = await response.json();
 
-$aikasarja = array_slice($data['properties']['timeseries'], 0, 10); //otetaan kuusi aikasarjaa, mitkä pelataan aikatarkistus funktion läpi
-$index = righttime($aikasarja);
+const aikasarja = data.properties.timeseries.slice(0, 10); //otetaan kuusi aikasarjaa, mitkä pelataan aikatarkistus funktion läpi
+const index = righttime(aikasarja); //hakee nykyajan indeksin
 
-$temp = $aikasarja[$index]['data']['instant']['details']['air_temperature'];
-$saa = $aikasarja[$index]['data']['next_1_hours']['summary']['symbol_code'];
+const temp = aikasarja[index]['data']['instant']['details']['air_temperature'];
+const saa = aikasarja[index]['data']['next_1_hours']['summary']['symbol_code'];
 
-$saa_symbol = getImage($saa);
-
-?>
-<!-- Mitä ohjelmassa näkyy-->
-<head>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<div class="saaData">
-    <h3 id="city">Kuopio</h3>
-    <img src="<?php echo $saa_symbol; ?>" alt="sää symboli">
-    <p id="temp"><b>Lämpötila:</b></p>
-    <p>
-        <b>
-    <?php
-    echo $temp;
-    ?>
-     ℃
-    </b>
-    </p>
-</div>
+const saa_symbol = getImage(saa);
 
 
+const lampo = document.getElementById("lampotila");
+lampo.textContent = temp + " ℃";
 
-<?php
-
-function righttime($aikasarja) {
-    date_default_timezone_set('Europe/Helsinki');
-    $kello = date('H');
-
-    foreach ($aikasarja as $index => $sarja) {
-        $hour = date('H', strtotime($sarja['time']));
-
-        if ($hour === $kello) {
-            return $index;
-        }
-    }
-
-    return 0;
+const imag = document.getElementById("saa-img");
+imag.src = saa_symbol;
 }
 
+haeSaa();
+/**********
+ * Funktiot
+ *********/
 
-function getImage($selite){ //ottaa symbolin selitteen, ja valitsee sille oman symboli kuvan
-    switch($selite){
+function righttime(aikasarja) {
+  // Haetaan nykyinen tunti Suomen aikavyöhykkeellä
+  const kello = parseInt(new Date().toLocaleString('en-US', { 
+    timeZone: 'Europe/Helsinki', 
+    hour: 'numeric', 
+    hour12: false 
+  }), 10);
+
+  const indeksi = aikasarja.findIndex((sarja) => {
+    // Muunnetaan myös API:n aikaleima Suomen aikavyöhykkeen tunniksi
+    const ennusteenTunti = parseInt(new Date(sarja.time).toLocaleString('en-US', { 
+      timeZone: 'Europe/Helsinki', 
+      hour: 'numeric', 
+      hour12: false 
+    }), 10);
+    
+    return ennusteenTunti === kello;
+  });
+
+  return indeksi !== -1 ? indeksi : 0;
+}
+
+function getImage(selite){ //ottaa symbolin selitteen, ja valitsee sille oman symboli kuvan
+    switch(selite){
         
         case "clear_night":
             return "https://cdn.fmi.fi/symbol-images/smartsymbol/v3/p/101.svg";
