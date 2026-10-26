@@ -7,13 +7,13 @@ const lastnum = -1;
 
 function naytaSana() { //Aloitetaan funktio yläosan teksti animaatiolle
     let number = Math.floor(Math.random() * 7); //Valitaan funktiosta satunnainen teksti
-    if(number !== lastnum){ //Poistaa mahdollisuuden samalle numerolle tuleva peräkkäin
+    if (number !== lastnum) { //Poistaa mahdollisuuden samalle numerolle tuleva peräkkäin
 
         let str = quote(number);
         let palaute_array = Array.from(str);
 
         tuloste = "";
-        
+
 
         for (let i = 0; i < palaute_array.length; i++) { //silmukalla mennään kaikkien kirjaimien läpi, sanassa ja tulostetaan se tekstiin
             setTimeout(function () {
@@ -27,7 +27,7 @@ function naytaSana() { //Aloitetaan funktio yläosan teksti animaatiolle
                 }
             }, i * 200); //sanan tulostus hidastuu kirjaimien määrän perusteella
         }
-    }else{
+    } else {
         number = Math.floor(Math.random() * 7); //Jos numero on sama kuin aiempi, niin se ottaa uuden numeron
     }
     lastnum = number;

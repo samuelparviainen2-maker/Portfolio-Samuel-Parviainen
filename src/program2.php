@@ -266,6 +266,9 @@ function getImage($selite){ //ottaa symbolin selitteen, ja valitsee sille oman s
         case "moderaterainfall":
             return "https://cdn.fmi.fi/symbol-images/smartsymbol/v3/p/38.svg";
             break;
+        case "rain":
+            return "https://cdn.fmi.fi/symbol-images/smartsymbol/v3/p/38.svg";
+            break;
         case "heavyrain":
             return "https://cdn.fmi.fi/symbol-images/smartsymbol/v3/p/39.svg";
             break;

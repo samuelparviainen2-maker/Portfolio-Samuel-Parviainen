@@ -8,8 +8,6 @@ body {
     padding: 0;
     overflow: hidden;
     background-color: #3d3d3d;
-    margin-left: 20%;
-    margin-right: 20%;
     padding: 10px;
 
 }
@@ -42,9 +40,24 @@ body {
     position: relative;
 }
 
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(231, 229, 229);
+    width: 100%;
+    height: 3vw;
+}
+
+.footer>h3 {
+    margin: 0;
+    text-align: center;
+}
+
+/* nappaimisto section */
 .nappaimisto {
-    width: 5%;
-    height: 2.9vw;
+    width: 6%;
+    height: 4vw;
 
     box-shadow: 0.23vw 0.33vw 0.156vw 0.352vw rgba(0, 0, 0, 1);
     background-color: rgba(107, 107, 107, 1);
@@ -71,24 +84,75 @@ body {
     width: 11% !important;
 }
 
+.top-nap {
+    margin-bottom: 1.3vw !important;
+}
+
+.puh-nappaimet {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    padding: 1rem 0.5rem 0;
+}
+
+.nappaimisto-div {
+    display: none;
+}
+
+/* Kun näyttö on kapea, käyttäjän pfp background on puhelin   */
+.puhelin {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 65vw;
+    padding: 1rem;
+    background-color: rgb(236, 224, 224);
+    border: 0.4vw solid #252525;
+    border-radius: 3vw;
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.3);
+}
+
+.naytto {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    background-image: url("https://storage.needpix.com/rsynced_images/web-design-2906159_1280.jpg");
+    border: 0.25rem solid #444;
+    border-radius: 0.75rem;
+}
+
+.puh-nappaimet button {
+    min-height: 2.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    color: #222;
+    font: inherit;
+    cursor: pointer;
+}
+
+.puh-nappaimet button:hover {
+    background-color: #d0d0d0;
+}
+
+.puh-nappaimet button:active {
+    background-color: #bcbcbc;
+}
+
 #kayttaja-background {
     position: relative;
     width: 100%;
     text-align: center;
 
-    background: radial-gradient(at bottom right, #F9F9F9 0, #F9F9F9 25px, #F9F9F933 25px, #F9F9F933 50px, #F9F9F9BF 50px, #F9F9F9BF 75px, #F9F9F940 75px, #F9F9F940 100px, #F9F9F94D 100px, #F9F9F94D 125px, #F9F9F9BF 125px, #F9F9F9BF 150px, #F9F9F933 150px, #F9F9F933 175px, transparent 175px, transparent 200px), radial-gradient(at top left, transparent 0, transparent 25px, #F9F9F933 25px, #F9F9F933 50px, #F9F9F9BF 50px, #F9F9F9BF 75px, #F9F9F94D 75px, #F9F9F94D 100px, #F9F9F940 100px, #F9F9F940 125px, #F9F9F9BF 125px, #F9F9F9BF 150px, #F9F9F933 150px, #F9F9F933 175px, #F9F9F9 175px, #F9F9F9 200px, transparent 200px, transparent 500px);
-    background-blend-mode: multiply;
-    background-size: 200px 200px, 200px 200px;
-    background-color: #F5F5FF;
+
 
     padding-top: 2vw;
     padding-bottom: 2vw;
     border-radius: 2vw;
 }
 
-.top-nap {
-    margin-bottom: 1.3vw !important;
-}
+
 
 #nimitys {
     position: absolute;
@@ -129,16 +193,20 @@ body {
 
 #skills-of-me {
     margin: auto;
-    background-color: rgb(86, 89, 105);
+    background-color: rgb(96, 102, 138);
     border-radius: 1vw;
     padding: 1vw;
     color: white;
-   
+
 }
 
-#skills-of-me > div:last-child {
+#skills-of-me>div:last-child {
     display: flex;
     flex-direction: column;
+}
+
+#skills-of-me>div>h2 {
+    text-align: center;
 }
 
 .myProgress {
@@ -202,8 +270,14 @@ body {
     padding: 1vw;
 }
 
+#of-me,
+#skills-of-me {
+    gap: 2.5vw;
+    width: 80%;
+}
 
-@media (min-width: 1200px) {
+
+@media screen and (min-aspect-ratio: 1/1) {
 
     #of-me,
     #skills-of-me {
@@ -217,11 +291,56 @@ body {
 
     }
 
+    .contact {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        gap: 2.5vw;
+
+        width: 50%;
+        margin: auto;
+    }
+
 
 
     #of-me-text {
         border-right: 2px solid rgba(145, 144, 144, 0.356);
 
+    }
+
+    .nav {
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+
+    .nappaimisto {
+        width: 5%;
+        height: 2.9vw;
+    }
+
+    .nappaimisto-div {
+        display: block;
+    }
+
+    .puhelin {
+        display: none;
+    }
+
+    #kayttaja-background {
+        background: radial-gradient(at bottom right, #F9F9F9 0, #F9F9F9 25px, #F9F9F933 25px, #F9F9F933 50px, #F9F9F9BF 50px, #F9F9F9BF 75px, #F9F9F940 75px, #F9F9F940 100px, #F9F9F94D 100px, #F9F9F94D 125px, #F9F9F9BF 125px, #F9F9F9BF 150px, #F9F9F933 150px, #F9F9F933 175px, transparent 175px, transparent 200px), radial-gradient(at top left, transparent 0, transparent 25px, #F9F9F933 25px, #F9F9F933 50px, #F9F9F9BF 50px, #F9F9F9BF 75px, #F9F9F94D 75px, #F9F9F94D 100px, #F9F9F940 100px, #F9F9F940 125px, #F9F9F9BF 125px, #F9F9F9BF 150px, #F9F9F933 150px, #F9F9F933 175px, #F9F9F9 175px, #F9F9F9 200px, transparent 200px, transparent 500px);
+        background-blend-mode: multiply;
+        background-size: 200px 200px, 200px 200px;
+        background-color: #F5F5FF;
+    }
+
+    .slideshow-container {
+        width: 100%;
+    }
+
+    #b1,
+    #b2,
+    #b3 {
+        font-size: 2vw !important;
     }
 }
 
@@ -231,46 +350,49 @@ body {
     display: none;
 }
 
-#b1, #b2, #b3{
+#b1,
+#b2,
+#b3 {
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 2vw;
-    
+
+    font-size: 8vw;
 }
 
-#b2, #b3{
+#b2,
+#b3 {
     color: #b6b6b6;
 }
 
-#b1{
+#b1 {
     color: #ffffff;
 }
 
-.timeline > div{
+.timeline>div {
     background-color: #09008a;
-    border-radius: 0.3vw;
+    border-radius: 0.3rem;
     color: whitesmoke;
-    padding-left: 0.4vw;
-    padding-right: 0.5vw;
-    padding-top: 0.1vw;
-    padding-bottom: 0.1vw;
-    margin-bottom: 2vw;
+    padding-left: 0.4rem;
+    padding-right: 0.5rem;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+    margin-bottom: 2rem;
 }
 
-.timeline{
+.timeline {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    height: 18vw;
+    height: 18rem;
 
     scrollbar-color: red;
 }
 
 .timeline::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
-.saaData{
+.saaData {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -282,7 +404,7 @@ body {
     margin: 0 auto;
     padding: 1rem;
     border-radius: 1rem;
-    
+
     color: #333;
     text-align: center;
 
@@ -291,10 +413,10 @@ body {
 
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(0.4px);
-    
+
 }
 
-.saaData > img{
+.saaData>img {
     width: clamp(5.625rem, 10vw, 8.75rem);
     height: clamp(5.625rem, 10vw, 8.75rem);
     object-fit: contain;
@@ -310,25 +432,104 @@ body {
     font-weight: 600;
 }
 
-.slideshow-container{
+.slideshow-container {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     flex: 1;
-    width: min(100%, 20rem);
+    width: 60%;
     min-height: 18.75rem;
     margin: 0 auto;
 }
 
-#city{
-margin-bottom: 0.125rem;
+#city {
+    margin-bottom: 0.125rem;
 }
 
-#temp{
-margin-top: -0.1875rem;
+#temp {
+    margin-top: -0.1875rem;
 }
 
-.next{
+.next {
     margin-top: auto;
     text-align: center;
+}
+
+.contact-left>input,
+.contact-left>textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #cbd5e1;
+    background-color: #f8fafc;
+    border-radius: 0.75rem;
+    color: #1f2937;
+    font: inherit;
+    margin-top: 2rem;
+}
+
+.contact-left>input:focus,
+.contact-left>textarea:focus {
+    border-color: #eb2525;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(235, 37, 37, 0.18);
+}
+
+.contact-left>button {
+    border: 1px solid hsl(118, 95%, 86%);
+    background-color: #d0fabf;
+    border-radius: 0.45rem;
+    color: #1f2937;
+    font: inherit;
+    margin-top: 2rem;
+    width: 30%;
+    height: 3rem;
+    font-size: 1.3rem;
+    margin-left: auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.contact-left>button:hover {
+    transform: scale(1.06);
+    background-color: #b4f799;
+}
+
+.img-contact {
+    width: 50%;
+    height: auto;
+
+}
+
+.img-contact {
+    width: 100%;
+}
+
+#About-me-kohta>h1 {
+    text-align: center;
+}
+
+#count {
+    font-size: 3vw;
+}
+
+.counter {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: rgba(245, 245, 245, 0.664);
+    border-radius: 1vw;
+    padding: 1vw;
+}
+
+.counter-buttons {
+    width: 90%;
+    height: 25%;
+    border-radius: 0.5vw;
+    margin-bottom: 1vw;
+}
+
+#form-contact {
+    width: 80%;
+    margin: auto;
 }

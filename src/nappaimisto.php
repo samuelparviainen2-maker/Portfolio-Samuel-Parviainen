@@ -6,6 +6,7 @@
         </title>
     </head>
     <body>
+            <div class="nappaimisto-div">
                     <button class="nappaimisto top-nap">esc</button>
                 <button class="nappaimisto top-nap">F1</button>
                 <button class="nappaimisto top-nap">F2</button>

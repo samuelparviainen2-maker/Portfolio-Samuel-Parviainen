@@ -43,12 +43,16 @@ if($kuukausi == 11 && $paiva < 4){
                     <br>
                     <p>Tieto- ja viestintä tekniikan perustutkinnon opiskelija</p>
                 </div>
-                <?php include "nappaimisto.php"; ?>
+                <?php 
+                include "nappaimisto.php"; 
+                include "puhelin.php"
+                ?>
+
             </div>
         </div>
 
 <!--About me kohta  -->
-        <div>
+        <div id="About-me-kohta">
 
             <h1>About me</h1>
             <div id="of-me">
@@ -59,7 +63,7 @@ if($kuukausi == 11 && $paiva < 4){
                     <br>
                     <p>Opiskelen tieto- ja viestintätekniikan perustutkintoa Savon ammattiopistossa. TVT-alan opintojen ohella olen suorittanut lukio-opintoja keskittyen matemaattisiin aineisiin, kuten pitkään matematiikkaan (MAA) ja fysiikkaan. Olen opiskellut seuraavia ohjelmointikieliä ja teknologioita: C# (koodauksen perusteisiin), HTML, CSS, PHP, SQL, JSON (REST API) sekä JavaScript sivustojen rakentamiseen, debuggaamiseen ja kehittämiseen. Lisäksi olen käyttäny CSS kirjastoja kuten Bootstrap ja tailwind sivustojen ulkonäköä varten.</p>
                     <br>
-                    <p>Opintojeni myötä kiinnostukseni robotiikkaan on kasvanut. Olen rakentanut robottikämmenen tavaroiden poimimiseen ymmärtääkseni koneiden rakennusprosessin vaiheet, ja suunnittelen jo seuraavia projekteja, kuten bipedaaliorobotteja. Lisäksi olen osallistunut Taitaja 2027 -kilpailuihin näyttääkseni taitoni luotettavammim ja muita tapoja paremmin.</p>
+                    <p>Opintojeni myötä kiinnostukseni robotiikkaan on kasvanut. Olen rakentanut robottikämmenen tavaroiden poimimiseen ymmärtääkseni koneiden rakennusprosessin vaiheet, ja suunnittelen jo seuraavia projekteja, kuten bipedaaliorobotteja.</p>
                 </div>
                 
                 <div id="of-me-list">
@@ -69,10 +73,9 @@ if($kuukausi == 11 && $paiva < 4){
                         <p><b>Nimi:</b> Samuel Onni Joonatan Parviainen</p>                
                         <p><b>Vahvuus:</b> Matemaattinen taito</p>
                         <p><b>Sijainti:</b> Kuopio, Finland</p>
-                        <p><b>Github:</b> <a href=""></a></p>
+                        <p><b>Github:</b> <a href="https://github.com/samuelparviainen2-maker">samuelparviainen2</a></p>
                         <p><b>Email:</b> samuelparviainen2@gmail.com</p>
-                        <p><b>Sivusto:</b> <a href=""></a></p>
-                        <p><b>Avoinna:</b> Oikeiden sivujen tekemiseen, ja niiden monimutkaisuuteen</p>
+                        <p><b>Avoinna:</b> Sivustojen toimintaan</p>
                         <p><b>Ikä:</b> <?php echo $ika; ?></p>
 
                 </div>
@@ -120,7 +123,7 @@ if($kuukausi == 11 && $paiva < 4){
                             <?php include "program2.php" ?>
                         </div>
                         <div class="" id ="3">
-                            <p>3</p>
+                            <?php include "program3.php" ?>
                         </div>
 
                         <div class="next">
@@ -135,8 +138,22 @@ if($kuukausi == 11 && $paiva < 4){
 
         </div>
 
-        <div>
+        <div class="contact">
+            
+            <img src="https://media.easy-peasy.ai/27feb2bb-aeb4-4a83-9fb6-8f3f2a15885e/9aeafb05-fc23-4859-9e16-dfa10050c9fd.png" alt="form-image" class="img-contact">
+            
+            <div id="form-contact">
+                <h1>Contact me</h1>
+                <form action="https://api.web3forms.com/submit" class="contact-left" method="POST">
+                    <input type="hidden" name="access_key" value="63b0c786-6512-40c9-8ad2-6b24b48ea28d">
 
+                    <input type="text" name="nimi" placeholder="Your name..." required>
+                    <input type="email" name="email" placeholder="Your Email.." required>
+                    <textarea name="message" placeholder="Message..." required></textarea>
+                    <button type="submit">Say hello 👋 </button>
+                </form>
+            </div>
         </div>
+        <?php include "footer.php"; ?>
     </body>
 </html>
