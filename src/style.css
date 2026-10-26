@@ -2,6 +2,23 @@ body {
     font-family: Helvetica, Arial, sans-serif;
 }
 
+p {
+    font-size: 0.7vw;
+}
+
+h1 {
+    font-size: 1.8vw;
+
+}
+
+h2 {
+    font-size: 1.1vw;
+}
+
+h3 {
+    font-size: 1.2vw;
+}
+
 .nav {
     list-style-type: none;
     margin: 0;
@@ -12,6 +29,10 @@ body {
 
 }
 
+.nav-button>li>a {
+    font-size: 0.7vw
+}
+
 .nav li {
     float: left;
 }
@@ -20,7 +41,7 @@ body {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 0.5vw 0.5vw;
     text-decoration: none;
 }
 
@@ -163,7 +184,7 @@ body {
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
-    width: min(90%, 320px);
+    width: 13vw;
     padding: 1rem;
     transform: translate(-50%, -50%);
     pointer-events: none;
@@ -173,15 +194,15 @@ body {
 }
 
 #profiilikuva {
-    width: clamp(70px, 10vw, 120px);
-    height: clamp(70px, 10vw, 120px);
+    width: 5vw;
+    height: 5vw;
     object-fit: cover;
     border-radius: 100%;
 }
 
 #nimitys h2,
 #nimitys p {
-    margin: 0.5rem 0 0;
+    margin: 0.5vw 0 0;
 }
 
 #tyosto::after {
